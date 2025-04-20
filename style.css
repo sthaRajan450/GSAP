@@ -126,7 +126,7 @@ html,body{
 
 
 
-#page1{
+/* #page1{
     width: 100%;
     height: 100vh;
     background: black;
@@ -135,9 +135,9 @@ html,body{
     width: 100%;
     height: 100vh;
     background: lightblue;
-    display: flex;
+    display: flex; */
     /* justify-content: center; */
-    align-items: center;
+    /* align-items: center;
     overflow-x: hidden;
 }
 #page2 h1{
@@ -148,4 +148,9 @@ html,body{
     width: 100%;
     height: 100vh;
     background: black;
+} */
+
+
+#curve{
+    background: red;
 }
