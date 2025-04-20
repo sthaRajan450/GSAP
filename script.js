@@ -159,9 +159,28 @@
 //   gsap.to(cursor,{
 //     scale:1,
 //     background: 'red'
-   
+
 //   })
 // });
 
+const menu = document.querySelector("#nav i");
+const close = document.querySelector("#full i");
 
-
+const tl = gsap.timeline();
+tl.to("#full", {
+  right: 0,
+  duration: 0.8,
+  ease: "power4.out",
+});
+tl.from("#full h4", {
+  opacity: 0,
+  x: 1000,
+  duration: 1,
+  stagger: 0.3,
+  ease: "power2.out",
+});
+tl.pause();
+menu.addEventListener("click", (e) => {
+  tl.play()
+});
+close.addEventListener("click", (e) => {tl.reverse()});
