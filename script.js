@@ -163,24 +163,59 @@
 //   })
 // });
 
-const menu = document.querySelector("#nav i");
-const close = document.querySelector("#full i");
+// const menu = document.querySelector("#nav i");
+// const close = document.querySelector("#full i");
 
-const tl = gsap.timeline();
-tl.to("#full", {
-  right: 0,
-  duration: 0.8,
-  ease: "power4.out",
-});
-tl.from("#full h4", {
+// const tl = gsap.timeline();
+// tl.to("#full", {
+//   right: 0,
+//   duration: 0.8,
+//   ease: "power4.out",
+// });
+// tl.from("#full h4", {
+//   opacity: 0,
+//   x: 1000,
+//   duration: 1,
+//   stagger: 0.3,
+//   ease: "power2.out",
+// });
+// tl.pause();
+// menu.addEventListener("click", (e) => {
+//   tl.play()
+// });
+// close.addEventListener("click", (e) => {tl.reverse()});
+
+function breakTheText() {
+  let heading = document.querySelector("#main h1").textContent;
+  let splittedHeading = heading.split("");
+  document.querySelector("#main h1").textContent = "";
+
+  splittedHeading.forEach((element, idx) => {
+    let span = document.createElement("span");
+    if (idx < splittedHeading.length / 2) {
+      span.textContent = element;
+      span.classList.add("a");
+      document.querySelector("#main h1").appendChild(span);
+    } else {
+      span.textContent = element;
+      span.classList.add("b");
+      document.querySelector("#main h1").appendChild(span);
+    }
+  });
+}
+breakTheText();
+
+gsap.from(".a", {
   opacity: 0,
-  x: 1000,
-  duration: 1,
-  stagger: 0.3,
-  ease: "power2.out",
+  y: 100,
+  duration: 0.8,
+  delay: 1,
+  stagger: 0.2,
 });
-tl.pause();
-menu.addEventListener("click", (e) => {
-  tl.play()
+gsap.from(".b", {
+  opacity: 0,
+  y: 100,
+  duration: 0.8,
+  delay: 1,
+  stagger: -0.2,
 });
-close.addEventListener("click", (e) => {tl.reverse()});
