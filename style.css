@@ -151,6 +151,49 @@ html,body{
 } */
 
 
-#curve{
+
+/* svg */
+/* #curve{
     background: red;
+} */
+
+
+
+
+/* custom cursor  */
+#cursor{
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 50%;
+    position: fixed;
+    font-size: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    
+}
+#main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#image{
+    width: 80vw;
+    height: 40vw;
+    background-image: url(https://images.pexels.com/photos/30012258/pexels-photo-30012258/free-photo-of-vivid-sunset-at-quy-nh-n-beach-with-boat-and-bridge.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+#overlay{
+    position: absolute;
+    background: red;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: transparent;
 }

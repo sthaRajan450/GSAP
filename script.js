@@ -110,21 +110,58 @@
 //   },
 // });
 
-let initialPath = `M 10 200 Q 500 200 990 200`;
-let finalPath = `M 10 200 Q 500 200 990 200`;
+// svg animation
+// let initialPath = `M 10 200 Q 500 200 990 200`;
+// let finalPath = `M 10 200 Q 500 200 990 200`;
 
-let curve = document.querySelector("#curve");
-curve.addEventListener("mousemove", (e) => {
-  initialPath = `M 10 200 Q ${e.x} ${e.y} 990 200`;
-  gsap.to("svg path", {
-    attr: { d: initialPath },
-    ease:"power3.out"
-  });
-});
-curve.addEventListener("mouseleave", (e) => {
-  gsap.to('svg path',{
-    attr:{d:finalPath},
-    duration:2,
-    ease:"elastic.out(1.2,0.1)"
-  })
-});
+// let curve = document.querySelector("#curve");
+// curve.addEventListener("mousemove", (e) => {
+//   initialPath = `M 10 200 Q ${e.x} ${e.y} 990 200`;
+//   gsap.to("svg path", {
+//     attr: { d: initialPath },
+//     ease:"power3.out"
+//   });
+// });
+// curve.addEventListener("mouseleave", (e) => {
+//   gsap.to('svg path',{
+//     attr:{d:finalPath},
+//     duration:2,
+//     ease:"elastic.out(1.2,0.1)"
+//   })
+// });
+
+//custom cursor
+
+// const cursor = document.querySelector("#cursor");
+// const imageDiv = document.getElementById("image");
+// window.addEventListener("mousemove", (e) => {
+//   gsap.to(cursor, {
+//     // transform:`translate(${e.x}px,${e.y}px)`
+
+//     //best practice
+//     x: e.x,
+//     y: e.y,
+//     duration: 0.5,
+
+//     // ease: "back.out",
+//   });
+// });
+
+// imageDiv.addEventListener("mouseenter", (e) => {
+//   cursor.innerHTML=`View More`
+//   gsap.to(cursor,{
+//     scale:2,
+//     background: '#ffffff8a'
+//   })
+// });
+// imageDiv.addEventListener("mouseleave", (e) => {
+//   cursor.innerHTML=``
+//   gsap.to(cursor,{
+//     scale:1,
+//     background: 'red'
+   
+//   })
+// });
+
+
+
