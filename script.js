@@ -185,37 +185,62 @@
 // });
 // close.addEventListener("click", (e) => {tl.reverse()});
 
-function breakTheText() {
-  let heading = document.querySelector("#main h1").textContent;
-  let splittedHeading = heading.split("");
-  document.querySelector("#main h1").textContent = "";
+// function breakTheText() {
+//   let heading = document.querySelector("#main h1").textContent;
+//   let splittedHeading = heading.split("");
+//   document.querySelector("#main h1").textContent = "";
 
-  splittedHeading.forEach((element, idx) => {
-    let span = document.createElement("span");
-    if (idx < splittedHeading.length / 2) {
-      span.textContent = element;
-      span.classList.add("a");
-      document.querySelector("#main h1").appendChild(span);
-    } else {
-      span.textContent = element;
-      span.classList.add("b");
-      document.querySelector("#main h1").appendChild(span);
-    }
-  });
-}
-breakTheText();
+//   splittedHeading.forEach((element, idx) => {
+//     let span = document.createElement("span");
+//     if (idx < splittedHeading.length / 2) {
+//       span.textContent = element;
+//       span.classList.add("a");
+//       document.querySelector("#main h1").appendChild(span);
+//     } else {
+//       span.textContent = element;
+//       span.classList.add("b");
+//       document.querySelector("#main h1").appendChild(span);
+//     }
+//   });
+// }
+// breakTheText();
 
-gsap.from(".a", {
-  opacity: 0,
-  y: 100,
-  duration: 0.8,
-  delay: 1,
-  stagger: 0.2,
-});
-gsap.from(".b", {
-  opacity: 0,
-  y: 100,
-  duration: 0.8,
-  delay: 1,
-  stagger: -0.2,
-});
+// gsap.from(".a", {
+//   opacity: 0,
+//   y: 100,
+//   duration: 0.8,
+//   delay: 1,
+//   stagger: 0.2,
+// });
+// gsap.from(".b", {
+//   opacity: 0,
+//   y: 100,
+//   duration: 0.8,
+//   delay: 1,
+//   stagger: -0.2,
+// });
+
+window.addEventListener('wheel',e=>{
+  if(e.deltaY>0){
+    gsap.to('.marque',{
+      transform:`translateX(-200%)`,
+      duration:2.5,
+      repeat:-1,
+      ease:'none'
+    })
+    gsap.to('.marque img',{
+      rotate:180
+    })
+  }
+  else{
+    gsap.to('.marque',{
+      transform:`translateX(0%)`,
+      duration:2.5,
+      repeat:-1,
+      ease:'none'
+    })
+    gsap.to('.marque img',{
+      rotate:0
+    })
+  }
+})
